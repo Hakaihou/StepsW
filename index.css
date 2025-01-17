@@ -46,8 +46,9 @@
 .steps-widget-section .steps-widget-red {
   border: 2px solid #b80000;
 }
-.steps-widget-section .steps-widget-red .steps-widget-sub {
+.steps-widget-section .steps-widget-red .steps-widget-sub, .steps-widget-section .steps-widget-red .steps-widget-date {
   color: #b80000;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=index.css.map */
