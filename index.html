@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
     <title>Title</title>
+</head>
+<body>
+<div style="height: 1500px"></div>
+<div class="steps-widget-section" id="steps-widget">
     <script>
         function dtime_nums(e, t) {
             var a = new Date();
@@ -13,20 +17,17 @@
             var g = "";
             a.getMonth() + 1 < 10 && (g = "0"),
                 (g += a.getMonth() + 1),
-                t === !0
-                    ? document.write(n + "." + g + "." + a.getFullYear())
-                    : document.write(n + "." + g + "." + a.getFullYear());
+                t === !0 ?
+                    document.write(n + "." + g + "." + a.getFullYear()) :
+                    document.write(n + "." + g + "." + a.getFullYear());
         }
     </script>
-</head>
-<body>
-<div style="height: 1000px"></div>
-<div class="steps-widget-section">
-    <h3 class="steps-widget-title">Short instructions on how to start earning on <a
+
+    <h3 class="steps-widget-title"><span data-i18n="Title"></span> <a
             href="{offer}">{_offer_value:brand}</a></h3>
     <div class="steps-widget steps-widget-red">
         <div class="steps-widget-item">
-            <div>Go to the <a href="">official website</a> of the <a
+            <div><span data-i18n="1stPoint"></span><a
                     href="">{_offer_value:brand}</a> and fill out the registration form.
             </div>
         </div>
@@ -61,99 +62,8 @@
             </div>
         </div>
     </div>
-
-    <script>
-        function updateTimeToMidnight() {
-            const timeElement = document.getElementById("steps-widget-time");
-            const now = new Date();
-
-            // Устанавливаем время до конца дня
-            const midnight = new Date(now);
-            midnight.setHours(24, 0, 0, 0); // Установить на полночь
-
-            const timeRemaining = midnight - now; // Разница в миллисекундах
-
-            // Перевод в часы, минуты и секунды
-            const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
-            const minutes = Math.floor((timeRemaining / (1000 * 60)) % 60);
-            const seconds = Math.floor((timeRemaining / 1000) % 60);
-
-            // Форматируем в HH:MM:SS
-            const formattedTime =
-                `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-
-            // Обновляем содержимое элемента
-            timeElement.textContent = formattedTime;
-        }
-
-        // Обновление каждую секунду
-        setInterval(updateTimeToMidnight, 1000);
-
-        // Первоначальный вызов, чтобы сразу установить начальное значение
-        updateTimeToMidnight();
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const element = document.getElementById("steps-widget-remain");
-            const localStorageKey = "steps-widget-remain-value"; // Ключ для хранения в localStorage
-            const minValue = 39; // Минимальное значение
-            let isCounting = false; // Флаг, чтобы предотвратить повторные запуски
-            let count = 4; // Количество раз, на которое можно уменьшить значение
-
-            // Функция для получения текущего значения из localStorage или установки значения по умолчанию
-            function initializeValue() {
-                const savedValue = localStorage.getItem(localStorageKey);
-                if (savedValue !== null) {
-                    const value = Math.max(parseInt(savedValue, 10), minValue); // Убедиться, что значение >= minValue
-                    element.textContent = value;
-                } else {
-                    localStorage.setItem(localStorageKey, element.textContent); // Сохранить текущее значение, если его нет
-                }
-            }
-
-            // Проверка, находится ли элемент в зоне видимости
-            function isElementInViewport(el) {
-                const rect = el.getBoundingClientRect();
-                return (
-                    rect.top >= 0 &&
-                    rect.left >= 0 &&
-                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-                );
-            }
-
-            // Функция для запуска обратного отсчёта
-            function startCountdown() {
-                if (isCounting || count === 0) return; // Если уже запущено, ничего не делаем
-                isCounting = true;
-
-                let currentValue = parseInt(element.textContent, 10);
-
-                const interval = setInterval(() => {
-                    if (count > 0 && currentValue > minValue) {
-                        currentValue -= 1; // Уменьшить значение
-                        element.textContent = currentValue; // Обновить текст элемента
-                        localStorage.setItem(localStorageKey, currentValue); // Сохранить в localStorage
-                        count -= 1; // Уменьшить счётчик оставшихся уменьшений
-                    } else {
-                        clearInterval(interval); // Остановить таймер
-                    }
-                }, 3000); // Задержка в 2 секунды
-            }
-
-            // Обработчик события скролла
-            window.addEventListener("scroll", () => {
-                if (isElementInViewport(element)) {
-                    startCountdown();
-                }
-            });
-
-            // Инициализация значения при загрузке страницы
-            initializeValue();
-        });
-
-    </script>
 </div>
+<script src="i18n.min.js"></script>
+<script src="index.js"></script>
 </body>
 </html>
