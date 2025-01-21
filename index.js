@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const currentLang = document.documentElement.getAttribute("lang") || "en";
-    const translationsPath = "./translate.json"; // Путь к файлу с переводами
+    const langAttribute = document.documentElement.getAttribute("lang") || "en";
+    const baseLang = langAttribute.split("-")[0]; // Извлекаем первую часть языка (например, "en" из "en-US")
+    const translationsPath = "./translate.json"; // Путь к JSON-файлу с переводами
 
-    // Загрузка переводов из JSON
+    // Загружаем JSON с переводами
     fetch(translationsPath)
         .then(response => {
             if (!response.ok) {
@@ -11,9 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
             return response.json();
         })
         .then(translations => {
-            const translationsForLang = translations[currentLang];
+            const translationsForLang = translations[baseLang];
             if (!translationsForLang) {
-                console.warn(`Переводы для языка "${currentLang}" не найдены.`);
+                console.warn(`Переводы для языка "${baseLang}" не найдены.`);
                 return;
             }
 

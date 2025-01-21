@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="es-PY">
 <head>
     <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
@@ -27,37 +27,36 @@
             href="{offer}">{_offer_value:brand}</a></h3>
     <div class="steps-widget steps-widget-red">
         <div class="steps-widget-item">
-            <div><span data-i18n="1stPoint"></span><a
-                    href="">{_offer_value:brand}</a> and fill out the registration form.
+            <div><span data-i18n="1Point"></span><a
+                    href="">{_offer_value:brand}</a> <span data-i18n="1Point_2"></span>
             </div>
         </div>
-        <div class="steps-widget-item">Wait for a call from a manager who will help you set up your
-            account over the
-            phone.
+        <div class="steps-widget-item" data-i18n="2Point">
         </div>
-        <div class="steps-widget-item">Top up your balance with any amount from $335.</div>
-        <div class="steps-widget-item">Withdrawal of money can be made at any time. It is credited to
-            the account within
-            2-3 hours (depending on the bank).
+        <div class="steps-widget-item">
+            <div><span data-i18n="3Point"></span><span id="min-deposit">$335</span>.</div>
+        </div>
+        <div class="steps-widget-item" data-i18n="4Point">
         </div>
         <div class="steps-widget-item" style="font-weight: bold">
-            Registration is free until
-            <span class="steps-widget-date">
+            <div>
+                <span data-i18n="5Point"></span>
+                <span class="steps-widget-date">
                             <script>
                                 dtime_nums(-1);
                             </script>
             </span>
-            .
+            </div>
         </div>
         <div class="steps-widget-item">
             <div class="steps-widget-sub-container">
-                <div>It will be available for:</div>
+                <div data-i18n="6Point"></div>
                 <div class="steps-widget-sub" id="steps-widget-time">00:50:21</div>
             </div>
         </div>
         <div class="steps-widget-item">
             <div class="steps-widget-sub-container">
-                <div>Remaining free accounts to register:</div>
+                <div data-i18n="7Point"></div>
                 <div class="steps-widget-sub" id="steps-widget-remain">43</div>
             </div>
         </div>

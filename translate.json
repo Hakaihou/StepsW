@@ -1,6 +1,24 @@
 {
-  "en-US": {
+  "en": {
     "Title": "Short instructions on how to start earning on",
-    "1stPoint": "Go to the <a href=\"{offer}\">official website</a> of the "
+    "1Point": "Go to the <a href=\"{offer}\">official website</a> of the ",
+    "1Point_2": "and fill out the registration form.",
+    "2Point": "Wait for a call from a manager who will help you set up your account over the phone.",
+    "3Point": "Top up your balance with any amount from ",
+    "4Point": "Withdrawal of money can be made at any time. It is credited to the account within 2-3 hours (depending on the bank).",
+    "5Point": "Registration is free until",
+    "6Point": "It will be available for:",
+    "7Point": "Remaining free accounts to register:"
+  },
+  "es": {
+    "Title": "Instrucciones breves sobre cómo empezar a ganar en",
+    "1Point": "Visita el <a href=\"{offer}\">sitio web oficial</a> del ",
+    "1Point_2": "y completa el formulario de registro.",
+    "2Point": "Espera una llamada de un gerente que te ayudará a configurar tu cuenta por teléfono.",
+    "3Point": "Recarga tu saldo con cualquier cantidad a partir de ",
+    "4Point": "Puedes retirar dinero en cualquier momento. Se acredita en la cuenta dentro de 2-3 horas (dependiendo del banco).",
+    "5Point": "El registro es gratuito hasta",
+    "6Point": "Estará disponible por:",
+    "7Point": "Cuentas gratuitas restantes para registrar:"
   }
 }
