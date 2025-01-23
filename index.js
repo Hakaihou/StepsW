@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const currentLang = document.documentElement.getAttribute("lang") || "en";
     const translationsPath = "./StepsW/translate.json"; // Путь к файлу с переводами
-    const stepsWidgetId = document.getElementById('steps-widget');
 
     // Загрузка переводов из JSON
     fetch(translationsPath)
@@ -19,32 +18,29 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             // Замена текста в элементах с data-i18n
-            stepsWidgetId.querySelectorAll("[data-i18n]").forEach(el => {
+            document.querySelectorAll("[data-i18n]").forEach(el => {
                 const key = el.getAttribute("data-i18n");
                 if (translationsForLang[key]) {
                     el.textContent = translationsForLang[key];
                 } else {
-                    console.warn(`Ключ "${key}" не найден в переводах для языка "${currentLang}".`);
                 }
             });
 
             // Замена placeholder в элементах с data-i18n-placeholder
-            stepsWidgetId.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+            document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
                 const key = el.getAttribute("data-i18n-placeholder");
                 if (translationsForLang[key]) {
                     el.placeholder = translationsForLang[key];
                 } else {
-                    console.warn(`Ключ "${key}" не найден в переводах для языка "${currentLang}".`);
                 }
             });
 
             // Замена value в элементах с data-i18n-value
-            stepsWidgetId.querySelectorAll("[data-i18n-value]").forEach(el => {
+            document.querySelectorAll("[data-i18n-value]").forEach(el => {
                 const key = el.getAttribute("data-i18n-value");
                 if (translationsForLang[key]) {
                     el.value = translationsForLang[key];
                 } else {
-                    console.warn(`Ключ "${key}" не найден в переводах для языка "${currentLang}".`);
                 }
             });
         })
