@@ -1,5 +1,5 @@
 .steps-widget-section {
-  --steps-color-main: #e1b000;
+  --steps-color-main: #2196b7;
   opacity: 0;
   transition: opacity 1s ease-in-out;
   text-align: left!important;
@@ -9,6 +9,9 @@
 }
 .steps-widget-section h3 {
   color: black !important;
+  font-size: 20px !important;
+  font-weight: bold;
+  margin: 15px 0!important;
 }
 .steps-widget-section .steps-widget {
   width: 100%;
