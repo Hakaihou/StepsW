@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const langAttribute = document.documentElement.getAttribute("lang") || "en";
-    const baseLang = langAttribute.split("-")[0]; // Извлекаем первую часть языка (например, "en" из "en-US")
-    const translationsPath = "./StepsW/translate.json"; // Путь к JSON-файлу с переводами
+    const currentLang = document.documentElement.getAttribute("lang") || "en";
+    const translationsPath = "./StepsW/translate.json"; // Путь к файлу с переводами
+    const stepsWidgetId = document.getElementById('steps-widget');
 
-    // Загружаем JSON с переводами
+    // Загрузка переводов из JSON
     fetch(translationsPath)
         .then(response => {
             if (!response.ok) {
@@ -12,18 +12,39 @@ document.addEventListener("DOMContentLoaded", () => {
             return response.json();
         })
         .then(translations => {
-            const translationsForLang = translations[baseLang];
+            const translationsForLang = translations[currentLang];
             if (!translationsForLang) {
-                console.warn(`Переводы для языка "${baseLang}" не найдены.`);
+                console.warn(`Переводы для языка "${currentLang}" не найдены.`);
                 return;
             }
 
-            // Замена текста, включая HTML, в элементах с data-i18n
-            document.querySelectorAll("[data-i18n]").forEach(el => {
+            // Замена текста в элементах с data-i18n
+            stepsWidgetId.querySelectorAll("[data-i18n]").forEach(el => {
                 const key = el.getAttribute("data-i18n");
-                const translation = translationsForLang[key];
-                if (translation) {
-                    el.innerHTML = translation; // Вставляем текст с HTML
+                if (translationsForLang[key]) {
+                    el.textContent = translationsForLang[key];
+                } else {
+                    console.warn(`Ключ "${key}" не найден в переводах для языка "${currentLang}".`);
+                }
+            });
+
+            // Замена placeholder в элементах с data-i18n-placeholder
+            stepsWidgetId.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
+                const key = el.getAttribute("data-i18n-placeholder");
+                if (translationsForLang[key]) {
+                    el.placeholder = translationsForLang[key];
+                } else {
+                    console.warn(`Ключ "${key}" не найден в переводах для языка "${currentLang}".`);
+                }
+            });
+
+            // Замена value в элементах с data-i18n-value
+            stepsWidgetId.querySelectorAll("[data-i18n-value]").forEach(el => {
+                const key = el.getAttribute("data-i18n-value");
+                if (translationsForLang[key]) {
+                    el.value = translationsForLang[key];
+                } else {
+                    console.warn(`Ключ "${key}" не найден в переводах для языка "${currentLang}".`);
                 }
             });
         })
