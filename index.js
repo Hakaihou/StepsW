@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const langAttribute = document.documentElement.getAttribute("lang") || "en";
     const baseLang = langAttribute.split("-")[0]; // Извлекаем первую часть языка (например, "en" из "en-US")
-    const translationsPath = "./translate.json"; // Путь к JSON-файлу с переводами
+    const translationsPath = "./StepsW/translate.json"; // Путь к JSON-файлу с переводами
 
     // Загружаем JSON с переводами
     fetch(translationsPath)

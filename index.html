@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="es-PY">
-<head>
-    <link rel="stylesheet" href="index.css">
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<div style="height: 1500px"></div>
-<div class="steps-widget-section" id="steps-widget">
+<!--Где-нибудь в <head>-->
+<link rel="stylesheet" href="./StepsW/index.css">
+
+<!--В нужном месте вместо шагов-->
+<center class="steps-widget-section" id="steps-widget">
     <script>
         function dtime_nums(e, t) {
             var a = new Date();
@@ -51,7 +46,7 @@
         <div class="steps-widget-item">
             <div class="steps-widget-sub-container">
                 <div data-i18n="6Point"></div>
-                <div class="steps-widget-sub" id="steps-widget-time">00:50:21</div>
+                <div class="steps-widget-sub" id="steps-widget-time"></div>
             </div>
         </div>
         <div class="steps-widget-item">
@@ -61,8 +56,7 @@
             </div>
         </div>
     </div>
-</div>
-<script src="i18n.min.js"></script>
-<script src="index.js"></script>
-</body>
-</html>
+</center>
+
+<!--Перед закрывающим тегом </body>-->
+<script src="./StepsW/index.js"></script>
