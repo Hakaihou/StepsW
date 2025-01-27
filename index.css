@@ -80,12 +80,6 @@
   }
 }
 
-@media (max-width:450px) {
-  .steps-widget-section .steps-widget {
-    padding: 10px;
-  }
-}
-
 @media (max-width: 400px) {
   .steps-widget-section .steps-widget {
     font-size: 14px!important;
