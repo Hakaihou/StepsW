@@ -68,23 +68,33 @@ document.addEventListener("DOMContentLoaded", () => {
     updateTimeToMidnight();
 
     // Функционал появления виджета при скролле
-    const stepsWidget = document.querySelector("#steps-widget");
+    // Выбираем все элементы, которые будем отслеживать
+    const stepsWidgetItems = document.querySelectorAll(".steps-widget-item");
 
     const observerOptions = {
         root: null,
         threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px"
     };
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    // Создаём экземпляр IntersectionObserver
+    const itemObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                stepsWidget.classList.add("steps-widget-visible");
+                // При появлении элемента на экране добавляем класс для анимации/плавного появления
+                entry.target.classList.add("steps-widget-item-visible");
+
+                // После того как элемент стал видимым, снимаем наблюдение, чтобы не повторять анимацию
                 observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    observer.observe(stepsWidget);
+    // Запускаем наблюдение за каждым steps-widget-item
+    stepsWidgetItems.forEach(item => {
+        itemObserver.observe(item);
+    });
+
 
     // Функционал обратного отсчёта
     const element = document.getElementById("steps-widget-remain");
