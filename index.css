@@ -1,5 +1,8 @@
+html {
+  --steps-color-main: rgba(59, 130, 246);
+}
+
 .steps-widget-section {
-  --steps-color-main: #2196b7;
   transition: opacity 1s ease-in-out;
   text-align: left!important;
 }

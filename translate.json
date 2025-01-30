@@ -4,17 +4,20 @@
     "1Point": "Visita el <a href=\"{offer}\">sitio web oficial</a> del ",
     "1Point_2": "y completa el formulario de registro.",
     "2Point": "Espera una llamada de un gerente que te ayudará a configurar tu cuenta por teléfono.",
-    "3Point": "Recarga tu saldo con cualquier cantidad a partir de 930 Sol.",
+    "3Point": "Recarga tu saldo con cualquier cantidad a partir de 230,000 peso.",
     "4Point": "Puedes retirar dinero en cualquier momento. Se acredita en la cuenta dentro de 2-3 horas (dependiendo del banco).",
     "5Point": "El registro es gratuito hasta",
     "6Point": "Estará disponible por:",
     "7Point": "Cuentas gratuitas restantes para registrar:",
-    "1Sum": "930 Sol",
-    "2Sum": "468 Sol",
-    "3Sum": "82 Sol",
-    "4Sum": "1212 Sol",
-    "5Sum": "2838 Sol",
-    "6Sum": "21872 Sol",
-    "7Sum": "18000 Sol"
+    "1Sum": "230,000 peso",
+    "2Sum": "18 millones de peso",
+    "3Sum": "268,946 peso",
+    "4Sum": "38,946 peso",
+    "5Sum": "5, o incluso 6,000,000 peso",
+    "6Sum": "23,000 peso",
+    "7Sum": "253,000 peso",
+    "8Sum": "420,000 peso",
+    "9Sum": "3,833,895 peso",
+    "10Sum": "3,000,000 peso"
   }
 }
